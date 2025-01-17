@@ -3,7 +3,7 @@
 //------------section a------------
 
 
-import 'dart:io';
+//import 'dart:io';
 
 //----2.
 
@@ -72,83 +72,22 @@ import 'dart:io';
 // }
 
 //-----5.
-
-
+void main(){
+    List<int>number=[12,45,7,89,23];
+    int largestnum =largest(number);
+    print(largestnum);
+}
+    int largest(List<int>numbers){
+        int large=0;
+        
+        for(int i=0;i<5;i++){
+            if(numbers[i]<numbers[i+1]){
+              large=numbers[i];
+            }
+        }
+        return large;
+}
 // section B
-
-//--------3. 
-
-
- void main(){
-List<Map> books=[];
-  print("WELCOME TO THE LIBRARY MANAGEMENT SYSTEM\n");
-for(;;){
-print("enter your choice\n");
-print("""1. Add book 
-2. Edit book
-3. Delete book
-4. Get all book\n""");
-
-stdout.write("Enter your choice : ");
-int? input=int.tryParse(stdin.readLineSync()!);
-
-if(input==1){
-    Map newbook=addbook();
-    books.add(newbook);
-    print(books);
-    print("book added succesfully");
-}
-if(input==4){
-    getallbook(books);
-}
-if(input==2){
-    Map editnew=
-    editbook(books);
-}
-if(input==3){
-    deletebook();
-}
-
-stdout.write("do you want to continue(yes/no) : ");
-String userinput=stdin.readLineSync()!;
-
-if(userinput.toLowerCase()=="no"){
-  break;
-}
-}
-print("\nThank you for using the library management system.Goodbye!");
-}
-
-Map addbook(){
-  stdout.write("Enter book name : ");
-  String bookname =stdin.readLineSync()!;
-  stdout.write("Enter author name : ");
-  String authorname =stdin.readLineSync()!;
-  stdout.write("enter published year : ");
-  String year = stdin.readLineSync()!;
-  Map newbook={"name": bookname,"author":authorname,"year":year};
-  return newbook;
-}
-
-editbook(List<Map>books){
-    stdout.write("enter new name :");
-    String bookname =stdin.readLineSync()!;
-    stdout.write("new author name : ");
-    String authorname =stdin.readLineSync()!;
-    Map editedbook ={"name":bookname,"author":authorname};
-    return editedbook;
-
-}
-
-deletebook(){
-
-}
-
-getallbook(List<Map>books){
-    for(int index =0;index<books.length;index++){
-        print("book ${index+1}: \n name : ${books[index]["name"]},\nyear : ${books[index]["year"]}");
-    }
-}
 
 // ---------1.
 
@@ -165,3 +104,79 @@ getallbook(List<Map>books){
 //         print('  ');
 //     }
 // }
+
+//--------3. 
+
+
+//  void main(){
+// List<Map> books=[];
+//   print("WELCOME TO THE LIBRARY MANAGEMENT SYSTEM\n");
+// for(;;){
+// print("enter your choice\n");
+// print("""1. Add book 
+// 2. Edit book
+// 3. Delete book
+// 4. Get all book\n""");
+
+// stdout.write("Enter your choice : ");
+// int? input=int.tryParse(stdin.readLineSync()!);
+
+// if(input==1){
+//     Map newbook=addbook();
+//     books.add(newbook);
+//     print(books);
+//     print("book added succesfully");
+// }
+// if(input==4){
+//     getallbook(books);
+// }
+// if(input==2){
+//     Map editnew=
+//     editbook(books);
+// }
+// if(input==3){
+//     deletebook();
+// }
+
+// stdout.write("do you want to continue(yes/no) : ");
+// String userinput=stdin.readLineSync()!;
+
+// if(userinput.toLowerCase()=="no"){
+//   break;
+// }
+// }
+// print("\nThank you for using the library management system.Goodbye!");
+// }
+
+// Map addbook(){
+//   stdout.write("Enter book name : ");
+//   String bookname =stdin.readLineSync()!;
+//   stdout.write("Enter author name : ");
+//   String authorname =stdin.readLineSync()!;
+//   stdout.write("enter published year : ");
+//   String year = stdin.readLineSync()!;
+//   Map newbook={"name": bookname,"author":authorname,"year":year};
+//   return newbook;
+// }
+
+// editbook(List<Map>books){
+//     stdout.write("enter new name :");
+//     String bookname =stdin.readLineSync()!;
+//     stdout.write("new author name : ");
+//     String authorname =stdin.readLineSync()!;
+//     Map editedbook ={"name":bookname,"author":authorname};
+//     return editedbook;
+
+// }
+
+// deletebook(){
+
+// }
+
+// getallbook(List<Map>books){
+//     for(int index =0;index<books.length;index++){
+//         print("book ${index+1}: \n name : ${books[index]["name"]},\nyear : ${books[index]["year"]}");
+//     }
+// }
+
+
